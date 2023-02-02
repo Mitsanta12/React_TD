@@ -1,0 +1,41 @@
+.Navbar {
+    background-color: #333;
+    color: #fff;
+  }
+  
+  .Navbar-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+  
+  .Navbar-brand {
+    color: #fff;
+    font-size: 20px;
+    text-decoration: none;
+  }
+  
+  .Navbar-menu {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .Navbar-item {
+    margin: 0 10px;
+  }
+  
+  .Navbar-link {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+  }
+  
+  .Navbar-link:hover {
+    color: #ccc;
+  }
+  
