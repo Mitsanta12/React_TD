@@ -5,6 +5,7 @@ function Todo(){
     const [todo, setTodo] = useState('');
     const [doing, setDoing] = useState([]);
     const [done, setDone] = useState([]);
+  
     const handleSubmit = (e) => {
       e.preventDefault();
       setDoing([...doing, todo]);
@@ -35,7 +36,7 @@ function Todo(){
              <div > 
                 <h1>TODO APPLICATION</h1>
                 <form onSubmit={handleSubmit}>
-                  <input 
+                  <input data-testId= "input"
                    type="text" 
                    value={todo} 
                    onChange={e => setTodo(e.target.value)} onKeyDown={(e)=>{e.key === 'Enter' && handleSubmit()}}
@@ -50,7 +51,7 @@ function Todo(){
                   {doing.map((todo, index) => (
                     <li key={index}>
                       {todo}
-                      <input 
+                      <input data-testId= "checks"
                         type="checkbox" 
                         onClick={() => handleCheck(index)} 
                         className='checkbox'
@@ -81,4 +82,4 @@ function Todo(){
     </>)    
 }
 
-export default Todo;
+export default React.memo(Todo);
