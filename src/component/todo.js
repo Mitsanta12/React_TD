@@ -8,8 +8,11 @@ function Todo(){
   
     const handleSubmit = (e) => {
       e.preventDefault();
-      setDoing([...doing, todo]);
-      setTodo('');
+      if(e.target.value !== " "){
+        setDoing([...doing, todo]);
+        setTodo('');
+      }
+     
     }
 
     const handleDelete = (index) => {
@@ -44,14 +47,15 @@ function Todo(){
                   />
                 </form>
               </div>
-            <div className='container'>
+            <div className='container' data-testId= "Checkbox">
               <div className='todo'>
                 <h3>TODO</h3>
+                <form>
                 <ul>
                   {doing.map((todo, index) => (
                     <li key={index}>
                       {todo}
-                      <input data-testId= "checks"
+                      <input 
                         type="checkbox" 
                         onClick={() => handleCheck(index)} 
                         className='checkbox'
@@ -59,9 +63,10 @@ function Todo(){
                     </li>
                   ))}
                 </ul>
+                </form>
               </div>
             
-          <div className='done'>
+          <div className='done' data-testId= "done">
             <h3>DONE</h3>
               <ul>
                 {done.map((todo, index) => (

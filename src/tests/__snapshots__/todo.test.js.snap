@@ -21,6 +21,7 @@ Array [
   </div>,
   <div
     className="container"
+    data-testId="Checkbox"
   >
     <div
       className="todo"
@@ -28,10 +29,13 @@ Array [
       <h3>
         TODO
       </h3>
-      <ul />
+      <form>
+        <ul />
+      </form>
     </div>
     <div
       className="done"
+      data-testId="done"
     >
       <h3>
         DONE

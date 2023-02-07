@@ -32,13 +32,28 @@ describe('Todo component', () => {
       expect (mock.call.length).toBe(1)    
   });
 
-  //
+  //verifie lorsque le checkbox est checker
   it('it"s checked', () => {
     const mock = jest.fn  
       render( <Todo/>)
-        const checked = screen.getByTestId('checks')
+        const checked = screen.getByTestId('Checkbox')
         fireEvent.click(checked)
-        expect (mock.call.length).toBe(0)
+        expect (mock.call.length).toBe(1)
   })
 
+  it('delete todo when he is done correctly', () =>{
+    const mock = jest.fn  
+      render(<Todo/>)
+        const deletedone= screen.getByTestId('done')
+        fireEvent.click(deletedone)
+        expect (mock.call.length).toBe(1)
+  })
+
+  it('adds doing when checkbox is called', () => {
+    const mock = jest.fn
+      render( <Todo/>)
+      const done = screen.getByTestId('done')
+      fireEvent.keyPress(done,{ key: {mock}} )
+      expect (mock.call.length).toBe(1)    
+  });
 });
